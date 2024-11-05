@@ -59,13 +59,13 @@ const Todo = () => {
   const completedTasks = items.filter(item => item.completed);
 
   return (
-    <div className="p-4 bg-white">
+    <div className="p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
       <h2 className="text-2xl mb-4 text-center font-bold">Todo List</h2>
       
       {isModalOpen && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-bold mb-4">Add New Todo Item</h3>
+          <div className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg w-11/12 sm:w-3/4 md:w-1/2">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4">Add New Todo Item</h3>
             <input type="text" className="border border-gray-300 p-2 w-full rounded mb-4"
               value={newItem}
               onChange={(e) => setNewItem(e.target.value)}
@@ -78,7 +78,7 @@ const Todo = () => {
                 Cancel
               </button>
               <button
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-blue-500 text-white px-4 py-2 rounded w-full sm:w-auto"
                 onClick={addItem}
               >
                 Add Item
@@ -88,18 +88,18 @@ const Todo = () => {
         </div>
       )}
 
-      <div className="flex mb-4">
+      <div className="flex justify-center mb-4">
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg w-full sm:w-auto"
           onClick={() => setIsModalOpen(true)}
         >
           Add New Item
         </button>
       </div>
   
-      <table className="min-w-full border border-gray-200">
+      <table className="min-w-full border border-gray-200 overflow-auto">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-200 text:xs sm:text-sm md:text-base">
           <th className="px-4 py-2 text-start">Complete</th>
           <th className="px-4 py-2 text-left">Task</th>
            
